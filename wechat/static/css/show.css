@@ -1,0 +1,40 @@
+.plan .plan-title {
+  position: relative;
+  height: 26px;
+  margin: 11px 0px;
+  font-size: 17px;
+}
+.plan .plan-title button {
+  position: absolute;
+  right: 15px;
+  background: #56abe4;
+}
+.plan .weui_cells .entry-lt {
+  width: 100px;
+}
+.plan .weui_cells .entry-text {
+  border-left: 1px solid #c9c9c9;
+  height: 24px;
+  padding-left: 15px;
+  border-radius: 0px;
+}
+.plan .plan-btm {
+  position: relative;
+  margin-top: 10px;
+}
+.plan .plan-btm button {
+  position: absolute;
+  top: 50%;
+  margin-left: 15px;
+  background: #eb4f38;
+}
+.plan .plan-btm img {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+}
+.plan .plan-note {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}

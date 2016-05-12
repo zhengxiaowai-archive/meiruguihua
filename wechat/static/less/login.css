@@ -1,0 +1,50 @@
+.login-register *:before {
+  border: 0px;
+}
+.login-register *:after {
+  border: 0px;
+}
+.login-register .login-register-title {
+  text-align: center;
+  height: 50px;
+  font-size: 17px;
+}
+.login-register .username-password .input-cell {
+  border: 1px solid #d9d9d9;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  width: 70%;
+}
+.login-register .username-password .btn-btn {
+  width: 50%;
+  background: #56abe4;
+  border: 0px;
+}
+.login-register .line {
+  margin-top: 10px;
+}
+.login-register .line .line-l {
+  width: 42.5%;
+  height: 0px;
+  border-top: #d9d9d9 1px solid;
+  float: left;
+}
+.login-register .line .line-r {
+  width: 42.5%;
+  height: 0px;
+  border-top: #d9d9d9 1px solid;
+  float: right;
+}
+.login-register .line .line-word {
+  float: left;
+  height: 5px;
+  line-height: 5px;
+  width: 15%;
+  text-align: center;
+}
+.login-register .goto {
+  margin-top: 50px;
+  text-align: center;
+  color: #3399CC;
+}

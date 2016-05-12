@@ -1,0 +1,67 @@
+.details .detail-title {
+  position: relative;
+}
+.details .detail-title .now-date {
+  font-size: 17px;
+  color: black;
+}
+.details .detail-title .plan-progress {
+  padding: 0px;
+  font-size: 14px;
+}
+.details .detail-title .details-submit {
+  width: 20%;
+  font-size: 12px;
+  position: absolute;
+  top: 15%;
+  right: 15px;
+  background: #56abe4;
+  color: white;
+  border: 0px;
+}
+.details .detail_content {
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+.details .detail_content .detail_entry {
+  padding: 10px 15px;
+  overflow: hidden;
+}
+.details .detail_content .detail_entry p {
+  display: inline;
+}
+.details .detail_content .detail_entry .entry_time {
+  margin-left: 10px;
+}
+.details .detail_content .detail_entry .entry_content {
+  float: right;
+  width: 60%;
+}
+.details .do_other {
+  margin-top: 0px;
+}
+.details .do_other .weui_cells {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.details .do_other .weui_cells:before {
+  border: 0px;
+}
+.details .do_other .weui_cells:after {
+  border: 0px;
+}
+.details .do_other .weui_cells .weui_cell {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.details .do_other .weui_cells .weui_cell:before {
+  border: 0px;
+}
+.details .do_other .weui_cells .weui_cell:after {
+  border: 0px;
+}
+.details .do_other .weui_cells .weui_cell:last-child {
+  border: 1px solid #f9f9f9;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}

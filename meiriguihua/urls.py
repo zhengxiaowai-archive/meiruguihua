@@ -1,21 +1,28 @@
-"""meiriguihua URL Configuration
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.9/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
-"""
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
+from wechat import views as wechat_views
+from wechat import users as user_api
+
+wechat_patterns = [
+    url(r'^plan/show', wechat_views.show),
+    url(r'^plan/manage', wechat_views.manage),
+    url(r'^login', wechat_views.login),
+    url(r'^register', wechat_views.register),
+    url(r'^plan/details', wechat_views.details),
+]
+
+
+api_patterns = [
+    url(r'^register', user_api.user_register),
+    url(r'^login', user_api.user_login),
+    url(r'^logout', user_api.user_logout),
+]
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-]
+    url(r'^wechat/', include(wechat_patterns)),
+    url(r'^api/', include(api_patterns)),
+] 

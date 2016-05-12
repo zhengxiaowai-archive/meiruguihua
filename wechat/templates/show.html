@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="padding plan">
+  <div class="weui_cells_title plan-title">
+      规划日期：2016.3.16（周三）
+    <button href="javascript:;" class="weui_btn weui_btn_mini weui_btn_primary">提交</button>
+  </div>
+  <div class="weui_cells">
+    <div class="weui_cell entry">
+      <div class="weui_cell_bd entry-lt">
+          <input class="weui_input" type="text" placeholder="填写时间" maxlength='15'>
+      </div>
+      <div class="weui_cell_bd weui_cell_primary">
+          <textarea class="weui_textarea entry-text" id="textarea" placeholder="填写内容" clos="30"></textarea>
+      </div>
+    </div>
+    <div class="weui_cell entry">
+      <div class="weui_cell_bd entry-lt">
+          <input class="weui_input" type="text" placeholder="填写时间">
+      </div>
+      <div class="weui_cell_bd weui_cell_primary">
+          <textarea class="weui_textarea entry-text" id="textarea" placeholder="填写内容" clos="30"></textarea>
+      </div>
+    </div>
+    <div class="weui_cell entry">
+      <div class="weui_cell_bd entry-lt">
+          <input class="weui_input" type="text" placeholder="填写时间">
+      </div>
+      <div class="weui_cell_bd weui_cell_primary">
+          <textarea class="weui_textarea entry-text" id="textarea" placeholder="填写内容" clos="30"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class='plan-btm'>
+      <button href="javascript:;" class="weui_btn weui_btn_mini weui_btn_primary">清空内容</button>
+      <img  src="/static/images/fillplusSVG.svg" />
+  </div>
+  
+
+  <div class="weui_cells weui_cells_form plan-note">
+      <div class="weui_cell">
+          <div class="weui_cell_bd weui_cell_primary">
+              <textarea class="weui_textarea" id="textarea" placeholder="备注" rows="3"></textarea>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

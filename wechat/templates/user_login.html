@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class='login-register'>
+    <div class="weui_cells_title login-register-title">{{ title }}</div>
+    <div class="weui_cells weui_cells_form username-password">
+        <form>
+            {% csrf_token %}
+            <div class="weui_cell input-cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input input_email" type="text" placeholder="邮箱" name='username' autofocus>
+                </div>
+            </div>
+            <div class="weui_cell input-cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input input_password" type="password" placeholder="密码" name='password'>
+                </div>
+            </div>
+        </form>
+        {% if 'login' in request.path %}
+        <button id="login" class="weui_btn weui_btn_primary input-cell btn-btn">{{  title }}</button>
+        {% else %}
+        <button id="register" class="weui_btn weui_btn_primary input-cell btn-btn">{{  title }}</button>
+        {% endif %}
+    </div>
+    <div class="line">
+        <div class="line-l"></div>
+        <div class="line-word">or</div>
+        <div class="line-r"></div>
+    </div>
+    
+    <div class='goto'>
+        {% if 'login' in request.path %}
+        <a href="/wechat/register?{{ request.GET.urlencode }}">注册账号</a>
+        {% else %}
+        <a href="/wechat/login?{{ request.GET.urlencode }}">登入账号</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
