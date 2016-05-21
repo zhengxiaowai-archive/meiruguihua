@@ -1,0 +1,7 @@
+arrow==0.7.0
+Django==1.9.6
+moment==0.2.2
+python-dateutil==2.5.3
+pytz==2016.4
+six==1.10.0
+times==0.7

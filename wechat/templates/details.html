@@ -4,60 +4,24 @@
 
 <div class="details">
     <div class="weui_cells_title detail-title">
-        <p class='now-date'>2016.3.16（周三）</p>
-        <span class="weui_cells_title plan-progress">完成度：100%</span>
+        <p class='now-date'>{{ date }}（{{ weekday }}）</p>
+        <span class="weui_cells_title plan-progress">完成度：{{ precent }}%</span>
         <a class="weui_btn weui_btn_plain_default details-submit">提交</a>
     </div>
     <div class="detail_content">
+        {% for detail in details %}
         <div class="detail_entry">
+            {% if detail.ischeck %}
+            <input type="checkbox" name="" id="" value="" checked>
+            {% else %}
             <input type="checkbox" name="" id="" value="">
-            <p class="entry_time">8:20 - 8:30 </p>
+            {% endif %}
+            <p class="entry_time">{{ detail.created_at }} </p>
             <div class="entry_content">
-                <p> 的水电费水电费算法速度发送到反倒是是发送到发送</p>
+                <p>{{ detail.content }}</p>
             </div>
         </div>
-        <div class="detail_entry">
-            <input type="checkbox" name="" id="" value="">
-            <p class="entry_time">8:20 - 8:30 </p>
-            <div class="entry_content">
-                <p> 的水电费水电费算法速度发送到反倒是是发送到发送</p>
-            </div>
-        </div>
-        <div class="detail_entry">
-            <input type="checkbox" name="" id="" value="">
-            <p class="entry_time">8:20 - 8:30 </p>
-            <div class="entry_content">
-                <p> 的水电费水电费算法速度发送到反倒是是发送到发送</p>
-            </div>
-        </div>
-        <div class="detail_entry">
-            <input type="checkbox" name="" id="" value="">
-            <p class="entry_time">8:20 - 8:30 </p>
-            <div class="entry_content">
-                <p> 的水电费水电费算法速度发送到反倒是是发送到发送</p>
-            </div>
-        </div>
-        <div class="detail_entry">
-            <input type="checkbox" name="" id="" value="">
-            <p class="entry_time">8:20 - 8:30 </p>
-            <div class="entry_content">
-                <p> 的水电费水电费算法速度发送到反倒是是发送到发送</p>
-            </div>
-        </div>
-        <div class="detail_entry">
-            <input type="checkbox" name="" id="" value="">
-            <p class="entry_time">8:20 - 8:30 </p>
-            <div class="entry_content">
-                <p> 的水电费水电费算法速度发送到反倒是是发送到发送</p>
-            </div>
-        </div>
-        <div class="detail_entry">
-            <input type="checkbox" name="" id="" value="">
-            <p class="entry_time">8:20 - 8:30 </p>
-            <div class="entry_content">
-                <p> 的水电费水电费算法速度发送到反倒是是发送到发送</p>
-            </div>
-        </div>
+        {% endfor %}
     </div>
     <div class="weui_cells_title do_other">
         <div class="weui_cells">

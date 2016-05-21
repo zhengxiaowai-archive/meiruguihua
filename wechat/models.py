@@ -17,6 +17,7 @@ class PlanDetail(models.Model):
     plan = models.ForeignKey(Plan, related_name='details')
     created_at = models.TextField(u'时间段')
     content = models.TextField(u'内容')
+    ischeck = models.BooleanField(u'是否完成', default=False)
 
 
 

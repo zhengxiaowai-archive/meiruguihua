@@ -9,6 +9,9 @@
   right: 15px;
   background: #56abe4;
 }
+.plan .plan-title button:active {
+  background-color: #56abe4;
+}
 .plan .weui_cells .entry-lt {
   width: 100px;
 }
@@ -27,6 +30,9 @@
   top: 50%;
   margin-left: 15px;
   background: #eb4f38;
+}
+.plan .plan-btm button:active {
+  background-color: #eb4f38;
 }
 .plan .plan-btm img {
   position: absolute;
