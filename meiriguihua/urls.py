@@ -21,6 +21,7 @@ api_patterns = [
     url(r'^login', user_api.user_login),
     url(r'^logout', user_api.user_logout),
     url(r'^plan/create', apis.create_plan),
+    url(r'^plan/modify', apis.modify_plan),
 ]
 
 urlpatterns = [

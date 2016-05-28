@@ -5,16 +5,16 @@
 <div class="details">
     <div class="weui_cells_title detail-title">
         <p class='now-date'>{{ date }}（{{ weekday }}）</p>
-        <span class="weui_cells_title plan-progress">完成度：{{ precent }}%</span>
+        <span class="weui_cells_title plan-progress">完成度：<span class='precent'>{{ precent }}</span>%</span>
         <a class="weui_btn weui_btn_plain_default details-submit">提交</a>
     </div>
     <div class="detail_content">
         {% for detail in details %}
         <div class="detail_entry">
             {% if detail.ischeck %}
-            <input type="checkbox" name="" id="" value="" checked>
+            <input type="checkbox" name="entry-{{ detail.id }}" id="" value="{{ detail.id }}" checked>
             {% else %}
-            <input type="checkbox" name="" id="" value="">
+            <input type="checkbox" name="entry-{{ detail.id }}" id="" value="{{ detail.id }}">
             {% endif %}
             <p class="entry_time">{{ detail.created_at }} </p>
             <div class="entry_content">
@@ -23,6 +23,10 @@
         </div>
         {% endfor %}
     </div>
+
+    <div class='new-details'>
+    </div>
+
     <div class="weui_cells_title do_other">
         <div class="weui_cells">
             <div class="weui_cell">
@@ -41,7 +45,7 @@
             </div>
             <div class="weui_cell">
                 <div class="weui_cell_bd weui_cell_primary">
-                    <textarea class="weui_textarea" id="textarea" placeholder="备注" rows="3"></textarea>
+                    <textarea class="weui_textarea detail-note" id="textarea" placeholder="备注" rows="3">{{ note }}</textarea>
                 </div>
         </div>
     </div>

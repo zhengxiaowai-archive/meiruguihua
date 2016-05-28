@@ -30,3 +30,26 @@ def create_plan(request):
         detail.save()
 
     return JsonResponse({'success': True})
+
+@csrf_exempt
+@login_required
+@require_http_methods(['POST'])
+@transaction.atomic
+def modify_plan(request):
+    plan_contents = json.loads(request.body)
+    note = plan_contents['note']
+    details = plan_contents['details']
+    
+    # 获取 plan
+    plan = PlanDetail.objects.get(id=details[0]['id']).plan
+
+    # 从新设置 plan 的 note
+    plan.note = note
+    plan.save()
+
+    for detail in details:
+        db_detail = PlanDetail.objects.get(id=detail['id'])
+        db_detail.ischeck = detail['isChecked'] 
+        db_detail.save()
+
+    return JsonResponse({'success': True})

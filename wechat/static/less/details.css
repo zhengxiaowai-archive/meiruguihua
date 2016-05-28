@@ -37,6 +37,24 @@
   float: right;
   width: 60%;
 }
+.details .new-details .new-entry {
+  padding: 10px 15px;
+  overflow: hidden;
+}
+.details .new-details .new-entry * {
+  border: 0px;
+}
+.details .new-details .new-entry .new-time {
+  margin-left: 10px;
+  width: 25%;
+  font-size: 17px;
+}
+.details .new-details .new-entry .new-content {
+  float: right;
+  width: 60%;
+  margin-top: 0.6%;
+  font-size: 17px;
+}
 .details .do_other {
   margin-top: 0px;
 }

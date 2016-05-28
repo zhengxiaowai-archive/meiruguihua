@@ -75,6 +75,7 @@ def details(request, plan_id):
 
     return render(request, 'details.html',{'title': '详情',
         'details': plan_details,
+        'note': plan.note,
         'date': format_time,
         'precent': precent,
         'weekday': weekday})
