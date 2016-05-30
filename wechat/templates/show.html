@@ -3,24 +3,37 @@
 {% block content %}
 <div class="padding plan">
   <div class="weui_cells_title plan-title">
-      规划日期：{{ format_date}}（{{ weekday }}）
+      明天：{{ format_date}}（{{ weekday }}）
     <button class="submit-btn weui_btn weui_btn_mini weui_btn_primary">提交</button>
   </div>
   <div class="weui_cells entries">
-    <div class="weui_cell entry">
-      <div class="weui_cell_bd entry-lt">
-          <input class="weui_input" type="text" placeholder="填写时间" maxlength='15'>
+      {% for detail in details %}
+      <div class="weui_cell entry">
+          <div class="weui_cell_bd entry-lt">
+              <input class="weui_input" type="text" placeholder="填写时间" maxlength='15' value="{{ detail.created_at }}">
+          </div>
+          <div class="weui_cell_bd weui_cell_primary">
+              <textarea class="weui_textarea entry-text" id="textarea" placeholder="填写内容" clos="30">{{ detail.content }}</textarea>
+          </div>
+          <div class="btn btn-delete">删除</div>
       </div>
-      <div class="weui_cell_bd weui_cell_primary">
-          <textarea class="weui_textarea entry-text" id="textarea" placeholder="填写内容" clos="30"></textarea>
-      </div>
-    </div>
+      {% endfor %}
   </div>
   <div class='plan-btm'>
       <button href="javascript:;" class="clear-all weui_btn weui_btn_mini weui_btn_primary">清空内容</button>
       <img class='add-entry' src="/static/images/fillplusSVG.svg" />
   </div>
   
+  <div class="weui_dialog_alert" id="dialog1" style="display: none;">
+      <div class="weui_mask"></div>
+      <div class="weui_dialog">
+          <div class="weui_dialog_hd"><strong class="weui_dialog_title">警告</strong></div>
+          <div class="weui_dialog_bd">时间和内容不能为空</div>
+          <div class="weui_dialog_ft">
+              <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+          </div>
+      </div>
+  </div>
 
   <div class="weui_cells weui_cells_form plan-note">
       <div class="weui_cell">

@@ -13,9 +13,13 @@
             </div>
         </div>
         {% endfor %}
-
-    <div class="button_sp_area more-btn">
-        <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_default">点击加载更多</a>
     </div>
+    <div class="button_sp_area more-btn">
+        {% if next_per_page != 0 %}
+        <a href="/wechat/plan/manage?PerPage={{ next_per_page }}" class="weui_btn weui_btn_mini weui_btn_default">点击加载更多</a>
+        {% endif %}
+
+    </div>
+
 </div>
 {% endblock %}

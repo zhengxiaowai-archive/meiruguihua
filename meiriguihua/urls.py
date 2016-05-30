@@ -13,6 +13,8 @@ wechat_patterns = [
     url(r'^login', wechat_views.login),
     url(r'^register', wechat_views.register),
     url(r'^plan/(\d+)/details', wechat_views.details),
+    url(r'^plan/padding', wechat_views.padding),
+    url(r'^plan/today', wechat_views.today),
 ]
 
 

@@ -1,4 +1,8 @@
+html, body {
+    height: 100%;
+}
 .details {
+    height: 100%;
     .detail-title {
         position: relative;
         .now-date {
@@ -78,12 +82,17 @@
                 &:after {
                     border: 0px;
                 }
-                &:last-child {
-                    border: 1px solid #f9f9f9;
-                    padding-bottom: 0px;
-                    padding-top: 0px;
-                }
             }
+        }
+    }
+    .plan-note {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        .weui_cell {
+            padding: 0px;
+            margin: 10px 15px;
+        
         }
     }
 }

@@ -21,6 +21,18 @@
   padding-left: 15px;
   border-radius: 0px;
 }
+.plan .weui_cells .btn {
+  position: absolute;
+  top: 0;
+  right: -80px;
+  text-align: center;
+  background: #eb4f38;
+  color: #fff;
+  width: 80px;
+  height: 42px;
+  line-height: 43px;
+  border-top: 1px solid #c9c9c9;
+}
 .plan .plan-btm {
   position: relative;
   margin-top: 10px;

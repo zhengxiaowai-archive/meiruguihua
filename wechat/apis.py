@@ -39,6 +39,7 @@ def modify_plan(request):
     plan_contents = json.loads(request.body)
     note = plan_contents['note']
     details = plan_contents['details']
+    others = plan_contents['others']
     
     # 获取 plan
     plan = PlanDetail.objects.get(id=details[0]['id']).plan
@@ -51,5 +52,14 @@ def modify_plan(request):
         db_detail = PlanDetail.objects.get(id=detail['id'])
         db_detail.ischeck = detail['isChecked'] 
         db_detail.save()
+
+    for other in others:
+        new_detail = PlanDetail()
+        new_detail = PlanDetail()
+        new_detail.plan = plan
+        new_detail.created_at = other['title']
+        new_detail.content = other['content']
+        new_detail.save()
+
 
     return JsonResponse({'success': True})

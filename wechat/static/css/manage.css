@@ -11,9 +11,10 @@
 }
 .manage .more-btn {
   width: 100%;
-  position: fixed;
+  position: relative;
   text-align: center;
-  bottom: 10px;
+  top: 20%;
+  margin-top: 10px;
 }
 .manage .more-btn a {
   background: #ecf0f1;

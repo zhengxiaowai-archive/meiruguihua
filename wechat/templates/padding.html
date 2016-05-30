@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="padding">
+    <p class="padding-msg">
+    您已经创建过明天的规划了 
+    </p>
+    <a href="/wechat/plan/{{plan_id}}/details" class="weui_btn weui_btn_primary">点击此查看</a>
+</div>
+{% endblock %}

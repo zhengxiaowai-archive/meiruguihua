@@ -1,3 +1,10 @@
+html,
+body {
+  height: 100%;
+}
+.details {
+  height: 100%;
+}
 .details .detail-title {
   position: relative;
 }
@@ -78,8 +85,12 @@
 .details .do_other .weui_cells .weui_cell:after {
   border: 0px;
 }
-.details .do_other .weui_cells .weui_cell:last-child {
-  border: 1px solid #f9f9f9;
-  padding-bottom: 0px;
-  padding-top: 0px;
+.details .plan-note {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+.details .plan-note .weui_cell {
+  padding: 0px;
+  margin: 10px 15px;
 }

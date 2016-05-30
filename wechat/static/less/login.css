@@ -1,3 +1,6 @@
+.login-register {
+  padding-top: 20%;
+}
 .login-register *:before {
   border: 0px;
 }
@@ -12,9 +15,13 @@
 .login-register .username-password .input-cell {
   border: 1px solid #d9d9d9;
   margin: auto;
-  margin-bottom: 30px;
-  margin-top: 30px;
   width: 70%;
+}
+.login-register .username-password .input-warning {
+  width: 70%;
+  margin: auto;
+  font-size: 12px;
+  color: red;
 }
 .login-register .username-password .btn-btn {
   width: 50%;
