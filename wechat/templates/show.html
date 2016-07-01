@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="padding plan">
+<div class="plan">
   <div class="weui_cells_title plan-title">
       明天：{{ format_date}}（{{ weekday }}）
     <button class="submit-btn weui_btn weui_btn_mini weui_btn_primary">提交</button>
@@ -24,23 +24,23 @@
       <img class='add-entry' src="/static/images/fillplusSVG.svg" />
   </div>
   
-  <div class="weui_dialog_alert" id="dialog1" style="display: none;">
-      <div class="weui_mask"></div>
-      <div class="weui_dialog">
-          <div class="weui_dialog_hd"><strong class="weui_dialog_title">警告</strong></div>
-          <div class="weui_dialog_bd">时间和内容不能为空</div>
-          <div class="weui_dialog_ft">
-              <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
-          </div>
-      </div>
-  </div>
-
-  <div class="weui_cells weui_cells_form plan-note">
-      <div class="weui_cell">
-          <div class="weui_cell_bd weui_cell_primary">
-              <textarea class="weui_textarea note" id="textarea" placeholder="备注" rows="3"></textarea>
-          </div>
-      </div>
-  </div>
+  <div class="push"></div>
+</div>
+<div class="weui_cells weui_cells_form show-plan-note">
+    <div class="weui_cell">
+        <div class="weui_cell_bd weui_cell_primary">
+            <textarea class="weui_textarea note" id="textarea" placeholder="备注" rows="3"></textarea>
+        </div>
+    </div>
+</div>
+<div class="weui_dialog_alert" id="dialog1" style="display: none;">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd"><strong class="weui_dialog_title">警告</strong></div>
+        <div class="weui_dialog_bd">时间和内容不能为空</div>
+        <div class="weui_dialog_ft">
+            <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+        </div>
+    </div>
 </div>
 {% endblock %}

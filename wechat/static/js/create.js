@@ -1,6 +1,13 @@
 $(function () {
     $('.add-entry').on('click', function() {
-        $('.entry:last').after('<div class="weui_cell entry"><div class="weui_cell_bd entry-lt"><input class="weui_input" type="text" placeholder="填写时间" maxlength="15"></div><div class="weui_cell_bd weui_cell_primary"><textarea class="weui_textarea entry-text" id="textarea" placeholder="填写内容" clos="30"></textarea></div></div>');
+        var entrySize = $('.entry').length;
+        if (entrySize == 0) {
+            $('.entries').append('<div class="weui_cell entry"><div class="weui_cell_bd entry-lt"><input class="weui_input" type="text" placeholder="填写时间" maxlength="15"></div><div class="weui_cell_bd weui_cell_primary"><textarea class="weui_textarea entry-text" id="textarea" placeholder="填写内容" clos="30"></textarea></div><div class="btn btn-delete">删除</div></div>');
+        } else {
+            $('.entry:last').after('<div class="weui_cell entry"><div class="weui_cell_bd entry-lt"><input class="weui_input" type="text" placeholder="填写时间" maxlength="15"></div><div class="weui_cell_bd weui_cell_primary"><textarea class="weui_textarea entry-text" id="textarea" placeholder="填写内容" clos="30"></textarea></div><div class="btn btn-delete">删除</div></div>');
+        }
+        touchSlider();
+        deleteEntry();
     });
 
 });
@@ -9,7 +16,9 @@ $(function () {
 $(function () {
     $('.clear-all').on('click', function() {
         $('.entry').remove();
-        $('.entries').append('<div class="weui_cell entry"><div class="weui_cell_bd entry-lt"><input class="weui_input" type="text" placeholder="填写时间" maxlength="15"></div><div class="weui_cell_bd weui_cell_primary"><textarea class="weui_textarea entry-text" id="textarea" placeholder="填写内容" clos="30"></textarea></div></div>');
+        $('.entries').append('<div class="weui_cell entry"><div class="weui_cell_bd entry-lt"><input class="weui_input" type="text" placeholder="填写时间" maxlength="15"></div><div class="weui_cell_bd weui_cell_primary"><textarea class="weui_textarea entry-text" id="textarea" placeholder="填写内容" clos="30"></textarea></div><div class="btn btn-delete">删除</div></div>');
+        touchSlider();
+        deleteEntry();
     });
 
 });
@@ -63,6 +72,23 @@ $(function () {
 });
 
 $(function () {
+    touchSlider();
+});
+
+$(function() {
+    deleteEntry();
+});
+
+
+function deleteEntry() {
+    $('.btn-delete').on('click', function(e) {
+       var entry = e.target.parentNode; 
+        entry.remove();
+    });
+
+}
+
+function touchSlider() {
     $('.entry').on('touchstart', function(event) {
         var self = $(this);
         var diff = 0;
@@ -128,14 +154,5 @@ $(function () {
 
 
     });
-});
 
-$(function() {
-    var entries = $('.entries');
-    $('.btn-delete').on('click', function(e) {
-       var entry = e.target.parentNode; 
-        entry.remove();
-    });
-
-
-});
+}

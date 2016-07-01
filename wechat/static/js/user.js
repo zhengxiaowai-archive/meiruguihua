@@ -44,13 +44,8 @@ $(function() {
         }
         var data = $('form').serialize();
         fetch.post('/api/register', data, function(data) {
-            var CurrentUrl = window.location.href;
-            var toUrl = getQueryParam(CurrentUrl, 'next');
-            if (!toUrl) {
-                window.location.href = '/wechat/plan/show';
-            } else {
-                window.location.href = toUrl;
-            }
+            // 注册完 跳转到登入
+            window.location.href = '/wechat/login';
         },
         function(xhr) {
             if (xhr.status == 401) {

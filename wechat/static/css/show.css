@@ -1,3 +1,9 @@
+.plan {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -90px;
+}
 .plan .plan-title {
   position: relative;
   height: 26px;
@@ -35,24 +41,24 @@
 }
 .plan .plan-btm {
   position: relative;
-  margin-top: 10px;
 }
 .plan .plan-btm button {
-  position: absolute;
-  top: 50%;
-  margin-left: 15px;
+  position: relative;
+  left: 10%;
   background: #eb4f38;
 }
 .plan .plan-btm button:active {
   background-color: #eb4f38;
 }
 .plan .plan-btm img {
-  position: absolute;
-  top: 50%;
-  right: 15px;
+  position: relative;
+  top: 10px;
+  right: -60%;
 }
-.plan .plan-note {
-  width: 100%;
-  position: absolute;
-  bottom: 0px;
+.plan .push {
+  height: 90px;
+}
+.show-plan-note {
+  margin-top: 4.5%;
+  height: 90px;
 }

@@ -2,7 +2,10 @@ html, body {
     height: 100%;
 }
 .details {
+    min-height: 100%;
+    height: auto !important;
     height: 100%;
+    margin: 0 auto -80px;
     .detail-title {
         position: relative;
         .now-date {
@@ -85,14 +88,15 @@ html, body {
             }
         }
     }
-    .plan-note {
-        position: fixed;
-        bottom: 0px;
-        width: 100%;
-        .weui_cell {
-            padding: 0px;
-            margin: 10px 15px;
-        
-        }
+    .push {
+        height: 80px;
+    }
+}
+.details-plan-note {
+    border-top: 1px solid #c9c9c9;
+    height: 80px;
+    .weui_cell {
+        padding: 0px;
+        margin: 10px 15px;
     }
 }

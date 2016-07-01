@@ -17,8 +17,8 @@ from .models import Plan, PlanDetail
 @require_http_methods(['GET'])
 def show(request):
     tomorrow = moment.now().add(day=1)
-    #if Plan.objects.filter(created_at=tomorrow.date):
-    #    return redirect('/wechat/plan/padding')
+    if Plan.objects.filter(user=request.user, created_at=tomorrow.date):
+        return redirect('/wechat/plan/padding')
 
     template_val = {}
     template_val['title'] = u'创建规划'
