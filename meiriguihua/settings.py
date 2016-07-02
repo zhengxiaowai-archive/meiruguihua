@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'meiriguihua.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'meiriguihua',
+        'USER': 'root',
+        'PASSWORD': 'meiriguihua@jielong',
+        'HOST': '127.0.0.1',
+        'PORT': '9001'
     }
 }
 
@@ -121,8 +125,9 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-)
+STATIC_ROOT = '/home/hxy/meiriguihua/static'
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, "static"),
+#)
 
 LOGIN_URL='/wechat/login'
