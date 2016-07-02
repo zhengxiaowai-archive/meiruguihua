@@ -74,7 +74,8 @@ def manage(request):
         plan.format_time = to_moment.format("YYYY.MM.DD")
         plan.weekday = get_format_weekday(to_moment.weekday)
 
-    return render(request, 'manage.html', {'title': '管理规划', 'plans': plans, 'next_per_page': next_per_page})
+    return render(request, 'manage.html',
+            {'title': '管理规划', 'plans': plans, 'next_per_page': next_per_page})
 
 
 @require_http_methods(['GET'])
@@ -126,10 +127,5 @@ def padding(request):
     if tomorrow_plan:
         return render(
                 request, 'padding.html', {'title': "padding", "plan_id": tomorrow_plan.first().id});
-
-
-
-
-
 
 

@@ -11,7 +11,8 @@ from django.contrib.auth.models import User
 
 class Plan(models.Model):
     user = models.ForeignKey(User, related_name='plan')
-    created_at = models.DateField(u'创建时间', default=(timezone.now() + timedelta(days=1)).date())
+    created_at = models.DateField(u'创建时间',
+            default=(timezone.now() + timedelta(days=1)).date())
     note = models.TextField(u'备注', default='')
 
     def __unicode__(self):
