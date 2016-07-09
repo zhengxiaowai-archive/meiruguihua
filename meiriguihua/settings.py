@@ -75,16 +75,24 @@ WSGI_APPLICATION = 'meiriguihua.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'meiriguihua',
-        'USER': 'root',
-        'PASSWORD': 'meiriguihua@jielong',
-        'HOST': '127.0.0.1',
-        'PORT': '9001'
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'meiriguihua',
+            'USER': 'root',
+            'PASSWORD': 'meiriguihua@jielong',
+            'HOST': '127.0.0.1',
+            'PORT': '9001'
+        }
+    }
 
 
 # Password validation

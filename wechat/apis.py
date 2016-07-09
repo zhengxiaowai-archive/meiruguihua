@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import json
+import moment
 
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.http import require_http_methods
@@ -16,10 +17,12 @@ from .models import Plan, PlanDetail
 @transaction.atomic
 def create_plan(request):
     plan_contents = json.loads(request.body)
+    tomorrow = moment.now().add(day=1)
 
     plan = Plan()
     plan.user = request.user
     plan.note = plan_contents['note']
+    plan.created_at = tomorrow.date
     plan.save()
 
     for entry in plan_contents['entries']:
