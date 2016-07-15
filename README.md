@@ -19,7 +19,8 @@ watch-less -d less/ -r css -e .css
 
 ## 部署
 
-部署采用 uwsgi + Nginx 的方式部署
+- 部署采用 uwsgi + Nginx 的方式部署
+- Docker 部署
 
 ### 导出静态文件
 
@@ -66,6 +67,21 @@ make start-uwsgi
 ```
 
 如果需要设置启动端口，在Makefile中修改 ```$port``` 即可，默认是6000端口
+
+
+### Docker
+
+```shell
+docker build -t meiriguihua .
+docker run -d --name meiriguihua \
+    --restart=always \
+    -e DATABASE_NAME=meiriguihua \
+    -e DATABASE_USER=root \
+    -e DATABASE_HOST=127.0.0.1 \
+    -e DATABASE_PORT=3306 \
+    -p 10000:6000 \
+    meiriguihua
+```
 
 ---- 
 
