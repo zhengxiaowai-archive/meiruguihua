@@ -13,5 +13,4 @@ ENV DATABASE_HOST=mysql
 ENV DATABASE_PORT=3306
 
 
-CMD manage.py migrate
-CMD make start-uwsgi
+CMD /bin/bash start.sh
