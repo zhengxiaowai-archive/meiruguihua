@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '6_gveyzsij1y0j2$ap4-#ujwuc@)ne_$3g+7*1xy9@ymcea78s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -86,11 +86,16 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'meiriguihua',
-            'USER': 'root',
-            'PASSWORD': 'meiriguihua@jielong',
-            'HOST': '127.0.0.1',
-            'PORT': '9001'
+            'NAME': os.environ.get('DATABASE_NAME', 'meiriguihua'),
+            'USER': os.environ.get('DATABASE_USER', 'root'),
+            'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'mysql'),
+            'HOST': os.environ.get('DATABASE_HOST', '127.0.0.1'),
+            'PORT': os.environ.get('DATABASE_PORT', '3306'),
+            #'NAME': 'meiriguihua',
+            #'USER': 'root',
+            #'PASSWORD': 'meiriguihua@jielong',
+            #'HOST': '127.0.0.1',
+            #'PORT': '9001'
         }
     }
 
@@ -127,7 +132,6 @@ USE_L10N = True
 
 USE_TZ = False
 
-ALLOWED_HOSTS = ("meiriguihua.com", "www.meiriguihua.com")
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
