@@ -77,17 +77,14 @@ WSGI_APPLICATION = 'meiriguihua.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DATABASE_NAME', 'meiriguihua'),
-        'USER': os.environ.get('DATABASE_USER', 'root'),
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'mysql'),
-        'HOST': os.environ.get('DATABASE_HOST', '127.0.0.1'),
-        'PORT': os.environ.get('DATABASE_PORT', '3306'),
-        #'NAME': 'meiriguihua',
-        #'USER': 'root',
-        #'PASSWORD': 'meiriguihua@jielong',
-        #'HOST': '127.0.0.1',
-        #'PORT': '9001'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+       # 'ENGINE': 'django.db.backends.mysql',
+       # 'NAME': os.environ.get('DATABASE_NAME', 'meiriguihua'),
+       # 'USER': os.environ.get('DATABASE_USER', 'root'),
+       # 'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'mysql'),
+       # 'HOST': os.environ.get('DATABASE_HOST', '127.0.0.1'),
+       # 'PORT': os.environ.get('DATABASE_PORT', '3306'),
     }
 }
 

@@ -32,9 +32,9 @@ def show(request):
     if not user_plans:
         # 新用户, 添加三条作为引导
         details = []
-        details.append({'created_at': '9:00-10:00', 'content': '点击可以编辑内容'})
-        details.append({'created_at': '10:00-11:00', 'content': '向左滑动可以删除'})
-        details.append({'created_at': '11:00-12:00', 'content': '下方可以编辑备注'})
+        details.append({'created_at': '', 'content': ''})
+        #details.append({'created_at': '10:00-11:00', 'content': '向左滑动可以删除'})
+        #details.append({'created_at': '11:00-12:00', 'content': '下方可以编辑备注'})
         template_val['details'] = details
     else:
         # 老用户，自动填充上次的内容
